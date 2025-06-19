@@ -1,0 +1,22 @@
+
+1. Подключение к роботу через команду ssh rosbot@192.168.1.111
+Пароль: Qwerty
+
+Везде ~/catkin_ws$ source devel/setup.bash
+
+2. Запускаем на ПК лидар: roslaunch velodyne_pointcloud VLP_16_points.launch
+
+ Включаем для него карту: rosrun tf static_transform_publisher 0 0 0 0 0 0 map velodyne 100
+
+3. Запускаем на роботе: roslaunch abot_description bringup.launch
+
+4. Запускаем на ПК fusion: roslaunch abot_description fusion.launch
+
+
+В rviz -> add -> by_topic -> fused_image
+
+
+
+
+
+* проверить лидар: ping 192.168.0.201 
